@@ -2196,11 +2196,11 @@
 	  "diffEditor.insertedTextBackground": "#9bb95533",
 	  "diffEditor.removedTextBackground": "#ff000033",
 	  "diffEditor.border": "#d7d7d7",
-	  "panel.background": "#1b222c",
-	  "panel.border": "#2f3a4c",
+	  "panel.background": "#ffffff",
+	  "panel.border": "#d0d5dc",
 	  "panelTitle.activeBorder": "#098842",
-	  "panelTitle.activeForeground": "#ffffff",
-	  "panelTitle.inactiveForeground": "#8a929e",
+	  "panelTitle.activeForeground": "#1b222c",
+	  "panelTitle.inactiveForeground": "#5f6a79",
 	  "badge.background": "#098842",
 	  "badge.foreground": "#ffffff",
 	  "terminal.foreground": "#e7e9ee",
@@ -2316,7 +2316,7 @@
 	  "minimap.background": "#ffffff",
 	  "sideBar.dropBackground": "#1b222c",
 	  "editorGroup.emptyBackground": "#ffffff",
-	  "panelSection.border": "#2f3a4c",
+	  "panelSection.border": "#d0d5dc",
 	  "statusBarItem.activeBackground": "#FFFFFF25",
 	  "settings.headerForeground": "#616161",
 	  "settings.focusedRowBackground": "#ffffff07",
@@ -2409,6 +2409,8 @@
 	  "terminalCommandDecoration.defaultBackground": "#677283",
 	  "terminalCommandDecoration.successBackground": "#4fbf7f",
 	  "terminalCommandDecoration.errorBackground": "#e06c75",
-	  "menubar.selectionBorder": "#00000000"
+	  "menubar.selectionBorder": "#00000000",
+	  "list.errorForeground": "#ff8f8f",
+	  "list.warningForeground": "#f0d197"
 	}
   }
