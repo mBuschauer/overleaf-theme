@@ -2,8 +2,8 @@
   "name": "overleaf-theme",
   "displayName": "Overleaf Theme",
   "description": "A simple light theme inspired by Overleaf LaTex editor platform",
-  "version": "0.0.1",
-  "publisher": "AriqAhmer",
+  "version": "0.0.2",
+  "publisher": "mBuschauer",
   "engines": {
     "vscode": "^1.94.0"
   },
@@ -13,6 +13,7 @@
   "contributes": {
     "themes": [
       {
+        "id": "mbuschauer.overleaf",
         "label": "Overleaf Theme",
         "uiTheme": "vs",
         "path": "./themes/Overleaf Theme-color-theme.json"
@@ -21,6 +22,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AriqAhmer/overleaf-theme.git"
+    "url": "https://github.com/mBuschauer/overleaf-theme.git"
   }
 }
