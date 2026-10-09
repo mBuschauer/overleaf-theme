@@ -31,7 +31,7 @@ Then in home manager, define the plugin, install and activate it (I included set
 let
   overleaf-theme = pkgs.vscode-utils.buildVscodeExtension {
     pname = "overleaf-theme";
-    version = "0.0.4";
+    version = "0.0.5";
     src = inputs.overleaf-theme;
     sourceRoot = "source";
     vscodeExtPublisher = "marco";
