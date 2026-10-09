@@ -2,7 +2,7 @@
   "name": "overleaf-theme",
   "displayName": "Overleaf Theme",
   "description": "A simple light theme inspired by Overleaf LaTex editor platform",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "mBuschauer",
   "engines": {
     "vscode": "^1.94.0"
