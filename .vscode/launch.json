@@ -10,6 +10,9 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
+				// Open the dev host in the profile that uses this theme, so its
+				// cosmetic settings (fonts, modernUI off, PDF viewer colors) apply.
+				"--profile=latex",
 				"--extensionDevelopmentPath=${workspaceFolder}"
 			]
 		}

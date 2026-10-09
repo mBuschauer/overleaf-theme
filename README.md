@@ -5,7 +5,7 @@ This is just a simple Overleaf LaTex editor inspired light theme. It's based on 
 
 ## Tasks
 - [ ] Add screenshots of the theme (once I finished aforementioned QM homework)
-- [ ] Fix the styling of non .tex files and non-pdf panels
+- [x] Fix the styling of non .tex files and non-pdf panels
 
 PS: Feel free to fork and create a dark mode if you want to.
 
@@ -31,7 +31,7 @@ Then in home manager, define the plugin, install and activate it (I included set
 let
   overleaf-theme = pkgs.vscode-utils.buildVscodeExtension {
     pname = "overleaf-theme";
-    version = "1.0.0";
+    version = "0.0.4";
     src = inputs.overleaf-theme;
     sourceRoot = "source";
     vscodeExtPublisher = "marco";
@@ -40,84 +40,84 @@ let
   };
 in
 {
-    programs.vscode = {
-      enable = true;
-      package = pkgs.vscode;
-      profiles.default = {
-        extensions =
-          with pkgs.vscode-extensions;
-          [
-            overleaf-theme
-          ];
-        userSettings = {
-          "workbench.experimental.modernUI" = false;
-          "[latex]"."editor.wordWrap" = "on";
-          "latex-workshop.latex.autoClean.run" = "onBuilt";
-          "latex-workshop.latex.clean.method" = "glob";
-          "latex-workshop.latex.clean.fileTypes" = [
-            "*.aux"
-            "*.bbl"
-            "*.blg"
-            "*.idx"
-            "*.ind"
-            "*.lof"
-            "*.lot"
-            "*.out"
-            "*.toc"
-            "*.fls"
-            "*.log"
-            "*.fdb_latexmk"
-            "*.nav"
-            "*.snm"
-            "*.vrb"
-            "*.synctex(busy)"
-            "*.synctex.gz(busy)"
-          ];
-          "latex-workshop.view.pdf.viewer" = "tab";
-          "latex-workshop.view.pdf.color.light.backgroundColor" = "#495365";
-          "latex-workshop.formatting.latex" = "tex-fmt";
-
-          "workbench.colorTheme" = "mbuschauer.overleaf";
-          "workbench.preferredLightColorTheme" = "mbuschauer.overleaf";
-          "workbench.preferredDarkColorTheme" = "mbuschauer.overleaf";
-
-          "editor.fontFamily" = "'DejaVu Sans Mono', monospace";
-          "editor.fontSize" = 13;
-          "editor.lineHeight" = 19;
-          "editor.minimap.enabled" = false;
-          "editor.showFoldingControls" = "always";
-
-          # Terminal cursor
-          "terminal.integrated.cursorStyle" = "block";
-          "terminal.integrated.cursorBlinking" = true;
-        };
-        keybindings = [
-          {
-            key = "ctrl+b";
-            command = "editor.action.insertSnippet";
-            args = {
-              snippet = "\\\\textbf{\${TM_SELECTED_TEXT:$0}}";
-            };
-            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
-          }
-          {
-            key = "ctrl+i";
-            command = "editor.action.insertSnippet";
-            args = {
-              snippet = "\\\\textit{\${TM_SELECTED_TEXT:$0}}";
-            };
-            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
-          }
-          {
-            key = "ctrl+u";
-            command = "editor.action.insertSnippet";
-            args = {
-              snippet = "\\\\underline{\${TM_SELECTED_TEXT:$0}}";
-            };
-            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
-          }
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode;
+    profiles.default = {
+      extensions =
+        with pkgs.vscode-extensions;
+        [
+          overleaf-theme
         ];
+      userSettings = {
+        "workbench.experimental.modernUI" = false;
+        "[latex]"."editor.wordWrap" = "on";
+        "latex-workshop.latex.autoClean.run" = "onBuilt";
+        "latex-workshop.latex.clean.method" = "glob";
+        "latex-workshop.latex.clean.fileTypes" = [
+          "*.aux"
+          "*.bbl"
+          "*.blg"
+          "*.idx"
+          "*.ind"
+          "*.lof"
+          "*.lot"
+          "*.out"
+          "*.toc"
+          "*.fls"
+          "*.log"
+          "*.fdb_latexmk"
+          "*.nav"
+          "*.snm"
+          "*.vrb"
+          "*.synctex(busy)"
+          "*.synctex.gz(busy)"
+        ];
+        "latex-workshop.view.pdf.viewer" = "tab";
+        "latex-workshop.view.pdf.color.light.backgroundColor" = "#495365";
+        "latex-workshop.formatting.latex" = "tex-fmt";
+
+        "workbench.colorTheme" = "mbuschauer.overleaf";
+        "workbench.preferredLightColorTheme" = "mbuschauer.overleaf";
+        "workbench.preferredDarkColorTheme" = "mbuschauer.overleaf";
+
+        "editor.fontFamily" = "'DejaVu Sans Mono', monospace";
+        "editor.fontSize" = 13;
+        "editor.lineHeight" = 19;
+        "editor.minimap.enabled" = false;
+        "editor.showFoldingControls" = "always";
+
+        # Terminal cursor
+        "terminal.integrated.cursorStyle" = "block";
+        "terminal.integrated.cursorBlinking" = true;
       };
+      keybindings = [
+        {
+          key = "ctrl+b";
+          command = "editor.action.insertSnippet";
+          args = {
+            snippet = "\\\\textbf{\${TM_SELECTED_TEXT:$0}}";
+          };
+          when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+        }
+        {
+          key = "ctrl+i";
+          command = "editor.action.insertSnippet";
+          args = {
+            snippet = "\\\\textit{\${TM_SELECTED_TEXT:$0}}";
+          };
+          when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+        }
+        {
+          key = "ctrl+u";
+          command = "editor.action.insertSnippet";
+          args = {
+            snippet = "\\\\underline{\${TM_SELECTED_TEXT:$0}}";
+          };
+          when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+        }
+      ];
     };
+  };
 }
 ```
