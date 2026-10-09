@@ -50,6 +50,29 @@ in
             overleaf-theme
           ];
         userSettings = {
+          "workbench.experimental.modernUI" = false;
+          "[latex]"."editor.wordWrap" = "on";
+          "latex-workshop.latex.autoClean.run" = "onBuilt";
+          "latex-workshop.latex.clean.method" = "glob";
+          "latex-workshop.latex.clean.fileTypes" = [
+            "*.aux"
+            "*.bbl"
+            "*.blg"
+            "*.idx"
+            "*.ind"
+            "*.lof"
+            "*.lot"
+            "*.out"
+            "*.toc"
+            "*.fls"
+            "*.log"
+            "*.fdb_latexmk"
+            "*.nav"
+            "*.snm"
+            "*.vrb"
+            "*.synctex(busy)"
+            "*.synctex.gz(busy)"
+          ];
           "latex-workshop.view.pdf.viewer" = "tab";
           "latex-workshop.view.pdf.color.light.backgroundColor" = "#495365";
           "latex-workshop.formatting.latex" = "tex-fmt";
@@ -68,6 +91,32 @@ in
           "terminal.integrated.cursorStyle" = "block";
           "terminal.integrated.cursorBlinking" = true;
         };
+        keybindings = [
+          {
+            key = "ctrl+b";
+            command = "editor.action.insertSnippet";
+            args = {
+              snippet = "\\\\textbf{\${TM_SELECTED_TEXT:$0}}";
+            };
+            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+          }
+          {
+            key = "ctrl+i";
+            command = "editor.action.insertSnippet";
+            args = {
+              snippet = "\\\\textit{\${TM_SELECTED_TEXT:$0}}";
+            };
+            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+          }
+          {
+            key = "ctrl+u";
+            command = "editor.action.insertSnippet";
+            args = {
+              snippet = "\\\\underline{\${TM_SELECTED_TEXT:$0}}";
+            };
+            when = "editorTextFocus && !editorReadonly && editorLangId == 'latex'";
+          }
+        ];
       };
     };
 }
