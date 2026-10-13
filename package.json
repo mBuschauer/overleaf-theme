@@ -2,11 +2,14 @@
   "name": "overleaf-theme",
   "displayName": "Overleaf Theme",
   "description": "A simple light theme inspired by Overleaf LaTex editor platform",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "mBuschauer",
   "engines": {
     "vscode": "^1.94.0"
   },
+  "extensionPack": [
+    "James-Yu.latex-workshop"
+  ],
   "categories": [
     "Themes"
   ],
