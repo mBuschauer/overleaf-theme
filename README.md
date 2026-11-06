@@ -50,6 +50,8 @@ in
       extensions =
         with pkgs.vscode-extensions;
         [
+          latex-workshop
+          ltex-plus.vscode-ltex-plus
           overleaf-theme
         ];
       userSettings = {
@@ -93,6 +95,8 @@ in
         # Terminal cursor
         "terminal.integrated.cursorStyle" = "block";
         "terminal.integrated.cursorBlinking" = true;
+
+        "ltex.ltex-ls.path" = pkgs.ltex-ls-plus;
       };
       keybindings = [
         {
@@ -123,4 +127,30 @@ in
     };
   };
 }
+```
+Here is the shell.nix I use for almost every project (loaded with the nix-env plugin):
+```nix
+{
+  pkgs ? import <nixpkgs> { },
+}:
+
+pkgs.mkShell {
+  buildInputs = with pkgs; [
+    (texliveSmall.withPackages (
+      ps: with ps; [
+        latexmk
+        physics
+        enumitem
+        tcolorbox
+        pdfcol
+        tikzfill
+        listingsutf8
+        lmodern
+      ]
+    ))
+    tex-fmt
+    ltex-ls-plus
+  ];
+}
+
 ```
